@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">NewsA+</string>
+    <string name="connection_error_title">Check your connection</string>
+    <string name="connection_error_description">Please check your connection and try again</string>
+    <string name="connection_error_button_title">try again</string>
+    <string name="menu_main_title_home">Home</string>
+    <string name="menu_main_title_search">Search</string>
+    <string name="menu_main_title_notifications">Notifications</string>
+    <string name="menu_main_title_profile">Profile</string>
+    <string name="menu_main_title_overview">Overview</string>
+    <string name="news_feed_tabs_tab_first">Main</string>
+    <string name="news_feed_tabs_tab_second">WIP</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

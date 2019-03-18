@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/newsFeedFragment">
+
+
+    <fragment android:id="@+id/newsFeedFragment"
+              android:name="com.github.jershell.newsaplus.ui.NewsFeedFragment"
+              android:label="fragment_news_feed"
+              tools:layout="@layout/fragment_news_feed">
+        <action
+                android:id="@+id/action_newsFeedFragment_to_newsDetailFragment"
+                app:destination="@id/newsDetailFragment"
+        />
+    </fragment>
+    <fragment
+            android:id="@+id/newsDetailFragment"
+            android:name="com.github.jershell.newsaplus.ui.NewsDetailFragment"
+            android:label="fragment_news_detail"
+            tools:layout="@layout/list_item_news"
+    />
+    <fragment android:id="@+id/notificationsFragment"
+              android:name="com.github.jershell.newsaplus.ui.NotificationsFragment"
+              android:label="fragment_notifications"
+              tools:layout="@layout/fragment_notifications"
+    />
+    <fragment android:id="@+id/profileFragment"
+              android:name="com.github.jershell.newsaplus.ui.ProfileFragment"
+              android:label="fragment_profile"
+              tools:layout="@layout/fragment_profile"
+    />
+    <fragment android:id="@+id/searchFragment"
+              android:name="com.github.jershell.newsaplus.ui.SearchFragment"
+              android:label="fragment_search"
+              tools:layout="@layout/fragment_search"
+    />
+    <fragment android:id="@+id/overviewFragment"
+              android:name="com.github.jershell.newsaplus.ui.OverviewFragment"
+              android:label="fragment_overview"
+              tools:layout="@layout/fragment_overview"
+    />
+</navigation>

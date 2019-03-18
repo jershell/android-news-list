@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/news_item_image"
+            android:layout_width="match_parent"
+            android:layout_height="217dp"
+            android:scaleType="centerCrop"
+    />
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:layout_height="match_parent">
+
+        <com.google.android.flexbox.FlexboxLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:alignItems="center"
+        >
+            <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:src="@drawable/ic_marker_1"
+                    android:layout_marginRight="8dp"
+            />
+            <TextView
+                    android:id="@+id/news_item_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="dd.mm.yyyy"
+                    android:textFontWeight="500"
+                    android:textColor="@color/colorLabel"
+            />
+
+        </com.google.android.flexbox.FlexboxLayout>
+        <TextView
+                android:id="@+id/news_item_title"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lorem ipsum dolor sit amet"
+                android:textStyle="bold"
+                android:textColor="@color/colorNewsTitle"
+        />
+
+        <TextView
+                android:id="@+id/news_item_description"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorNewsTitle"
+                android:maxLines = "4"
+                android:text="Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet"
+        />
+    </LinearLayout>
+</LinearLayout>
