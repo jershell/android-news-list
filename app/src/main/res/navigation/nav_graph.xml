@@ -2,18 +2,9 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
-            app:startDestination="@id/newsFeedFragment">
+            app:startDestination="@id/newsFragment">
 
 
-    <fragment android:id="@+id/newsFeedFragment"
-              android:name="com.github.jershell.newsaplus.ui.NewsFeedFragment"
-              android:label="fragment_news_feed"
-              tools:layout="@layout/fragment_news_feed">
-        <action
-                android:id="@+id/action_newsFeedFragment_to_newsDetailFragment"
-                app:destination="@id/newsDetailFragment"
-        />
-    </fragment>
     <fragment
             android:id="@+id/newsDetailFragment"
             android:name="com.github.jershell.newsaplus.ui.NewsDetailFragment"
@@ -40,4 +31,8 @@
               android:label="fragment_overview"
               tools:layout="@layout/fragment_overview"
     />
+    <fragment android:id="@+id/newsFragment" android:name="com.github.jershell.newsaplus.ui.NewsFragment"
+              android:label="fragment_news" tools:layout="@layout/fragment_news">
+        <action android:id="@+id/action_newsFragment_to_newsDetailFragment" app:destination="@id/newsDetailFragment"/>
+    </fragment>
 </navigation>

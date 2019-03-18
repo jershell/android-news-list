@@ -21,12 +21,13 @@ class MainActivity : AppCompatActivity() {
     private fun onPressNavBarMenuItem(menuItem: MenuItem): Boolean {
         Log.i("MainActivity", "onPressNavBarMenuItem ${menuItem.title ?: ""}")
         return when (menuItem.itemId) {
-            R.id.menu_item_id_overview -> {
-                navController.navigate(R.id.overviewFragment)
-                true
-            }
+//            R.id.menu_item_id_overview -> {
+//                navController.navigate(R.id.overviewFragment)
+//                true
+//            }
             R.id.menu_item_id_home -> {
                 navController.popBackStack()
+                navController.navigate(R.id.newsFragment)
                 true
             }
             R.id.menu_item_id_notifications -> {
@@ -46,9 +47,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun navigateToDetail(itemPosition: Int) {
+        Log.i("MainActivity", "navigateToDetail($itemPosition)")
         val bundle = Bundle()
         bundle.putInt("itemPosition", itemPosition)
         navController.navigate(R.id.newsDetailFragment, bundle)
+    }
+
+    fun navigateToHome() {
+        Log.i("MainActivity", "navigateToHome()")
+        navController.popBackStack()
+        navController.navigate(R.id.newsFragment)
     }
 
     fun dialog(action: () -> Unit) {
@@ -84,8 +92,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-//        toolbar.setNavigationIcon(R.drawable.ic_back)
+
 
 
         bottom_navigation.setOnNavigationItemSelectedListener { menuItem ->

@@ -7,17 +7,6 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:theme="?attr/actionBarTheme"
-            android:minHeight="?attr/actionBarSize"
-            tools:layout_editor_absoluteX="0dp"
-            android:id="@+id/toolbar"
-            app:layout_constraintTop_toTopOf="@+id/nav_host_fragment"
-    />
-
     <fragment
             android:id="@+id/nav_host_fragment"
             android:name="androidx.navigation.fragment.NavHostFragment"

@@ -2,6 +2,7 @@ package com.github.jershell.newsaplus.ui
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.github.jershell.newsaplus.MainActivity
-import com.github.jershell.newsaplus.NewsFeedViewModel
+import com.github.jershell.newsaplus.models.NewsFeedViewModel
 import com.github.jershell.newsaplus.R
 import com.github.jershell.newsaplus.adapters.NewsFeedRecyclerAdapter
 import com.github.jershell.newsaplus.adapters.OnItemClickListener
@@ -20,8 +21,6 @@ import kotlinx.android.synthetic.main.fragment_news_feed.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import androidx.viewpager.widget.ViewPager
-import com.github.jershell.newsaplus.adapters.NewsFreedViewPagerAdapter
 
 
 class NewsFeedFragment : Fragment() {
@@ -35,6 +34,10 @@ class NewsFeedFragment : Fragment() {
         return inflater.inflate(com.github.jershell.newsaplus.R.layout.fragment_news_feed, container, false)
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.d("NewsFeedFragment", "onResume()")
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -54,7 +57,7 @@ class NewsFeedFragment : Fragment() {
         swipe.setOnRefreshListener {
             mainActivity.ifOnline {
                 GlobalScope.launch(Dispatchers.Main) {
-                    viewModel.fetch()
+                    viewModel.fetch(force = true)
                 }
             }
         }
